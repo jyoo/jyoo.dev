@@ -658,7 +658,7 @@ pre tt:after {
 .jyoo-header__name {
   margin: 0;
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 }
 
 .jyoo-header__button {
@@ -789,7 +789,7 @@ pre tt:after {
   .jyoo-header__name {
     margin: 0;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   .jyoo-header__button {
     margin: 0;

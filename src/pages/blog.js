@@ -23,7 +23,7 @@ const Blog = ({ data }) => {
             }}
           >
             <div className={"jyoo-body__title-wrapper"}>
-              <h1 className={"jyoo-font-size__extra_big"}>Posts</h1>
+              <h1 className={"jyoo-font-size__extra_big"}>Blog</h1>
             </div>
 
             <div
