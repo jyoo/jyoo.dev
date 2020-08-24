@@ -50,7 +50,7 @@ const Layout = ({ children, backgroundColor }) => {
         }
       >
         <motion.div
-          animate={{ opacity: isMobileMenuVisible ? 1 : 0 }}
+          animate={{ opacity: isMobileMenuVisible ? 1 : 0, }}
           transition={{
             duration: 0.5,
           }}
@@ -61,10 +61,10 @@ const Layout = ({ children, backgroundColor }) => {
             padding: `1.45rem 1.0875rem`,
             backgroundColor: "black",
             position: "fixed",
-            display: "flex",
+            display: isMobileMenuVisible ? "flex" : "none",
             flexDirection: "column",
             alignItems: "center",
-            zIndex: 10,
+            zIndex: isMobileMenuVisible ? 10 : 0,
             opacity: 0,
           }}
         >

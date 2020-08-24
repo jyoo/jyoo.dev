@@ -141,7 +141,7 @@ const CoreHeader = ({toggleMobileMenu}) => (
 
 const Header = ({toggleMobileMenu}) => {
   
-  if (window.location.pathname === "/") {
+  if (typeof window !== 'undefined' && window.location.pathname === "/") {
     return (
       <AnimationWrapper>
         <CoreHeader toggleMobileMenu={toggleMobileMenu} />
@@ -171,7 +171,7 @@ const Hamburger = ({toggleMobileMenu}) => {
       type="button"
     >
       <span
-        class="hamburger-box"
+        className="hamburger-box"
         style={{ display: "flex", alignItems: "center" }}
       >
         <span class="hamburger-inner"></span>
