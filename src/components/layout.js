@@ -19,6 +19,7 @@ const Layout = ({ children, backgroundColor }) => {
 
   const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
 
+  
   const toggleMobileMenu = useCallback(() => {
     
     setMobileMenuVisible(prev => !prev);
