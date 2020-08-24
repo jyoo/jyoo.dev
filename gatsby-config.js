@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `James Yoo`,
     description: `Toronto-based software developer who loves technology, cities and charts`,
-    author: `@gatsbyjs`,
+    author: `@jyoo`,
+    url: "https://www.jyoo.dev",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

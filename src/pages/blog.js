@@ -13,6 +13,7 @@ const Blog = ({ data }) => {
   
     return (
       <Layout backgroundColor={"#FFFAFA"}>
+        <SEO title="Blog" />
         <div className="jyoo-body__container">
           <div
             style={{

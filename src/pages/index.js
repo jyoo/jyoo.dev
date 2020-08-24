@@ -50,7 +50,7 @@ const IndexPage = ({data}) => {
           justifyContent: "center",
         }}
       >
-        <SEO title="Home" />
+        <SEO title="Hello" />
         <FadeIn>
           <h1 className={"jyoo-font__gray" + " " + "jyoo-font-size__extra_big"}>
             Hello. I'm <span className={"jyoo-font__white"}>James</span>,
@@ -169,8 +169,6 @@ const IndexPage = ({data}) => {
               />
             </FadeIn>
           ))}
-
-         
         </div>
       </div>
     </Layout>

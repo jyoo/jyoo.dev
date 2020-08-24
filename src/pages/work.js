@@ -9,6 +9,7 @@ import "../components/layout.css"
 
 const Work = () => (
   <Layout backgroundColor={"#FFFAFA"}>
+    <SEO title="Work" />
     <div className="jyoo-body__container">
       <div
         style={{
@@ -164,8 +165,6 @@ const Work = () => (
             </p>
           </div>
         </div>
-  
-  
       </div>
     </div>
   </Layout>
