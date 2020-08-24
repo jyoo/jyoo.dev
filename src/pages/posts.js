@@ -15,8 +15,8 @@ export default function Posts({data}) {
       <Layout backgroundColor="#FFFAFA">
         <div className="jyoo-body__container">
           <div className={"jyoo-body__title-wrapper"}>
-            <h1 className={"jyoo-font-size__big"}>{frontmatter.title}</h1>
-            <h2 className={"jyoo-font-size__small"}>{frontmatter.date}</h2>
+            <h2>{frontmatter.title}</h2>
+            <h3>{frontmatter.date}</h3>
           </div>
           <div
             className="post-space__section"
