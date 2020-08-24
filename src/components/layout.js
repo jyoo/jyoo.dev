@@ -130,15 +130,18 @@ const Layout = ({ children, backgroundColor }) => {
           margin: `0 auto`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
+          display: "flex",
+          justifyContent: "space-between"
         }}
       >
-        <footer className="jyoo-font__white jyoo-font-size__small">
-          <p>
-            © {new Date().getFullYear()}
-            {` `}
-            James Yoo. All Rights Reserved.
-          </p>
-        </footer>
+        <span className="jyoo-font__white jyoo-font-size__small">
+          © {new Date().getFullYear()}
+          {` `}
+          James Yoo. All Rights Reserved.
+        </span>
+        <span className="jyoo-font__white jyoo-font-size__small">
+          jungsup.yoo@gmail.com
+        </span>
       </div>
     </div>
   )
