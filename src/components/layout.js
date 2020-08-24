@@ -19,7 +19,7 @@ const Layout = ({ children, backgroundColor }) => {
 
   const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
 
-  
+
   const toggleMobileMenu = useCallback(() => {
     
     setMobileMenuVisible(prev => !prev);
@@ -51,7 +51,7 @@ const Layout = ({ children, backgroundColor }) => {
         }
       >
         <motion.div
-          animate={{ opacity: isMobileMenuVisible ? 1 : 0, }}
+          animate={{ opacity: isMobileMenuVisible ? 1 : 0 }}
           transition={{
             duration: 0.5,
           }}
@@ -71,13 +71,18 @@ const Layout = ({ children, backgroundColor }) => {
         >
           <div style={{ margin: "2rem", padding: "1rem 1rem" }}>
             <Link
-              to="/works"
+              to="/work"
               style={{
                 color: `white`,
                 textDecoration: `none`,
               }}
             >
-              <h2 className="jyoo-header__button">Works</h2>
+              <h2
+                className="jyoo-header__button"
+                onClick={() => setMobileMenuVisible(false)}
+              >
+                Work
+              </h2>
             </Link>
           </div>
 
@@ -89,7 +94,12 @@ const Layout = ({ children, backgroundColor }) => {
                 textDecoration: `none`,
               }}
             >
-              <h2 className="jyoo-header__button">Blog</h2>
+              <h2
+                className="jyoo-header__button"
+                onClick={() => setMobileMenuVisible(false)}
+              >
+                Blog
+              </h2>
             </Link>
           </div>
 
@@ -109,7 +119,7 @@ const Layout = ({ children, backgroundColor }) => {
           style={{
             margin: `0 auto`,
             maxWidth: 960,
-            padding: `0 1.0875rem 1.45rem`,
+            padding: `1.0875rem 1.45rem`,
           }}
         >
           {children}

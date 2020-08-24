@@ -5,7 +5,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import Post from "../components/post"
+import Excerpt from "../components/excerpt"
 
 
 
@@ -79,7 +79,7 @@ const IndexPage = ({data}) => {
           >
             <div className={"jyoo-body__title-wrapper"}>
               <h1 className={"jyoo-font__white jyoo-font-size__extra_big"}>
-                Works
+                Work
               </h1>
             </div>
           </div>
@@ -125,7 +125,7 @@ const IndexPage = ({data}) => {
             </div>
 
             <div className="jyoo-flex__read-more">
-              <Link to="/works">
+              <Link to="/work">
                 <span className="jyoo-font__white jyoo-font-size__small">
                   Read More
                 </span>
@@ -161,7 +161,7 @@ const IndexPage = ({data}) => {
         >
           {edges.map(edge => (
             <FadeIn>
-              <Post
+              <Excerpt
                 key={edge.node.id}
                 post={edge.node}
                 titleClass={"jyoo-font__white"}
@@ -170,45 +170,7 @@ const IndexPage = ({data}) => {
             </FadeIn>
           ))}
 
-          {/* <div className="jyoo-space__record">
-              <h3 className="jyoo-font__white">
-                Android App Crashed by React Native Maps and Firebase
-              </h3>
-              <p className={"jyoo-font__light_gray jyoo-font-size__small"}>
-                Using React Native which includes a JavaScript library, I can
-                make an iOS and Android app at the same time, and it is quite
-                useful. To develop my app, I installed the well-known packages,
-                react-native-maps and react-native-firebase. My iOS app was
-                working very well when I used both packages at the same time,
-                but Android app kept crashing whenever the screen was mounted.
-                By using lite-mode of Google Map, the app became working well.
-              </p>
-            </div>
-
-            <hr style={{ backgroundColor: "gray" }} /> */}
-
-          {/* <div className="jyoo-space__record">
-            <h2 className="jyoo-font__white">Averagenie</h2>
-            <p className="jyoo-font-size__default">
-              Designed and developed a website that shows the average of things
-              in the world.
-            </p>
-          </div>
-          <div className="jyoo-space__record">
-            <h2 className="jyoo-font__white">Han Translations</h2>
-            <p className="jyoo-font-size__default">
-              Developed and updated a company's website to support multiple
-              languages. Created and managed the company's other websites such
-              as Han Copywriting.
-            </p>
-          </div>
-          <div className="jyoo-space__record">
-            <h2 className="jyoo-font__white">Hyra</h2>
-            <p className="jyoo-font-size__default">
-              Designed and developed an iOS app to allow users to record their
-              expenses and income by taking a photo.
-            </p>
-          </div> */}
+         
         </div>
       </div>
     </Layout>

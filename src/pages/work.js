@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import "../components/layout.css"
 
 
-const Works = () => (
+const Work = () => (
   <Layout backgroundColor={"#FFFAFA"}>
     <div className="jyoo-body__container">
       <div
@@ -22,7 +22,7 @@ const Works = () => (
           <h1
             className={"jyoo__font-black" + " " + "jyoo-font-size__extra_big"}
           >
-            Works
+            Work
           </h1>
         </div>
 
@@ -170,4 +170,4 @@ const Works = () => (
     </div>
   </Layout>
 )
-export default Works
+export default Work

@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import React, { useEffect, useState, useRef, useCallback } from "react"
 
 import { motion } from "framer-motion"
@@ -50,7 +50,7 @@ const AnimationWrapper = (props) => {
   
     return (
       <motion.div
-        animate={{ opacity: isNavVisible ? 1 : 0, display: isNavVisible ? "inline" : "none"}}
+        animate={{ opacity: isNavVisible ? 1 : 0, display: isNavVisible ? "flex" : "none"}}
         className="jyoo-header__container jyoo-header__container-animation"
       >
         {props.children}
@@ -58,16 +58,15 @@ const AnimationWrapper = (props) => {
     )
 }
 
-const CoreHeader = ({toggleMobileMenu}) => (
+const NonAnimationWrapper = (props) => (
   <div className="jyoo-header__container">
-    <div
-      style={{
-        // margin: `0 auto`,
-        padding: `1.45rem 1.0875rem`,
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
+    {props.children}
+  </div>
+)
+
+const CoreHeader = ({ toggleMobileMenu }) => (
+  <>
+    <span className="jyoo-header__button-wrapper">
       <Link
         to="/"
         style={{
@@ -77,29 +76,22 @@ const CoreHeader = ({toggleMobileMenu}) => (
       >
         <h2 className="jyoo-header__name">James Yoo</h2>
       </Link>
-    </div>
+    </span>
 
-    <div
-      style={{
-        padding: `1.45rem 1.0875rem`,
-        display: "flex",
-        alignItems: "center",
-      }}
-      className={"jyoo-header__normal-container"}
-    >
-      <span>
+    <span className={"jyoo-header__button-container"}>
+      <span className="jyoo-header__button-wrapper">
         <Link
-          to="/works"
+          to="/work"
           style={{
             color: `white`,
             textDecoration: `none`,
           }}
         >
-          <h4 className="jyoo-header__button">Works</h4>
+          <h4 className="jyoo-header__button">Work</h4>
         </Link>
       </span>
 
-      <span>
+      <span className="jyoo-header__button-wrapper">
         <Link
           to="/blog"
           style={{
@@ -122,20 +114,14 @@ const CoreHeader = ({toggleMobileMenu}) => (
           <h4 className="jyoo-header__font">Charts</h4>
         </Link>
       </span> */}
-    </div>
+    </span>
 
-    <div
-      
-      className={"jyoo-header__mobile-container"}
-    >
-      <span
-        style={{ }}
-        className="jyoo-header__button"
-      >
+    <span className={"jyoo-header__mobile-container"}>
+      <span style={{}} className="jyoo-header__button">
         <Hamburger toggleMobileMenu={toggleMobileMenu} />
       </span>
-    </div>
-  </div>
+    </span>
+  </>
 )
 
 
@@ -149,7 +135,12 @@ const Header = ({toggleMobileMenu}) => {
     )
   }
 
-  else return <CoreHeader toggleMobileMenu={toggleMobileMenu} />
+  else 
+    return (
+      <NonAnimationWrapper>
+        <CoreHeader toggleMobileMenu={toggleMobileMenu} />
+      </NonAnimationWrapper>
+    )
 
 }
 const Hamburger = ({toggleMobileMenu}) => {
@@ -174,7 +165,7 @@ const Hamburger = ({toggleMobileMenu}) => {
         className="hamburger-box"
         style={{ display: "flex", alignItems: "center" }}
       >
-        <span class="hamburger-inner"></span>
+        <span className="hamburger-inner"></span>
       </span>
     </button>
   )

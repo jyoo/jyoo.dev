@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Post from "../components/post"
+import Excerpt from "../components/excerpt"
 import "../components/layout.css"
 
 const Blog = ({ data }) => {
@@ -34,7 +34,7 @@ const Blog = ({ data }) => {
               }}
             >
               {edges.map(edge => (
-                <Post
+                <Excerpt
                   key={edge.node.id}
                   post={edge.node}
                   titleClass={"jyoo-font__black"}
