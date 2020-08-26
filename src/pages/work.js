@@ -128,14 +128,18 @@ const Work = () => (
           className={"jyoo-space__container"}
         >
           <div className="jyoo-space__record">
-            <h2 className="jyoo-font__black">Chy Square</h2>
+            <h2 className="jyoo-font__black">
+              <a href="https://www.chysquare.com">Chy Square</a>
+            </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
               Collaborated in the designing and creation of websites, iOS and
               Android apps using React for Chy Square and clients.
             </p>
           </div>
           <div className="jyoo-space__record">
-            <h2 className="jyoo-font__black">Unlyst</h2>
+            <h2 className="jyoo-font__black">
+              <a href="https://www.unlyst.com">Unlyst</a>
+            </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
               Wrote Python scripts to track the status of real estate projects
               in Toronto and save them on AWS RDS. Designed and deployed a
@@ -143,14 +147,18 @@ const Work = () => (
             </p>
           </div>
           <div className="jyoo-space__record">
-            <h2 className="jyoo-font__black">Averagenie</h2>
+            <h2 className="jyoo-font__black">
+              <a href="https://www.averagenie.com">Averagenie</a>
+            </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
               Designed and developed a website that shows the average of things
               in the world.
             </p>
           </div>
           <div className="jyoo-space__record">
-            <h2 className="jyoo-font__black">Han Translations</h2>
+            <h2 className="jyoo-font__black">
+              <a href="https://hantranslations.com">Han Translations</a>
+            </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
               Developed and updated a company's website to support multiple
               languages. Created and managed the company's other websites such
@@ -158,7 +166,11 @@ const Work = () => (
             </p>
           </div>
           <div className="jyoo-space__record">
-            <h2 className="jyoo-font__black">Hyra</h2>
+            <h2 className="jyoo-font__black">
+              <a href="https://apps.apple.com/ca/app/hyra-money-expense-tracker/id1445975570">
+                Hyra
+              </a>
+            </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
               Designed and developed an iOS app to allow users to record their
               expenses and income by taking a photo.

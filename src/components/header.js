@@ -102,6 +102,7 @@ const CoreHeader = ({ toggleMobileMenu }) => (
           <h4 className="jyoo-header__button">Blog</h4>
         </Link>
       </span>
+      
 
       {/* <span>
         <Link

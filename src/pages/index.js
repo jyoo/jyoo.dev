@@ -58,7 +58,7 @@ const IndexPage = ({data}) => {
           <h1 className={"jyoo-font__gray" + " " + "jyoo-font-size__extra_big"}>
             Toronto-based{" "}
             <span className={"jyoo-font__white"}>software developer</span> who
-            loves technology, charts and buildings.
+            loves web, technology and investment.
           </h1>
         </FadeIn>
       </div>
