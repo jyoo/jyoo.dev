@@ -106,7 +106,6 @@ figure {
 }
 hr {
   box-sizing: content-box;
-  height: 0;
   overflow: visible;
 }
 button,
@@ -502,9 +501,9 @@ hr {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
+  /* background: hsla(0, 0%, 0%, 0.2); */
   border: none;
-  height: 0.5px;
+  height: 1.5px;
 }
 address {
   margin-left: 0;
@@ -763,6 +762,13 @@ pre tt:after {
   /* align-items: center */
 }
 
+.jyoo-hr__white {
+  background-color: white;
+}
+
+.jyoo-hr__black {
+  background-color: black;
+}
 
 @media only screen and (max-width: 575px) {
   html {

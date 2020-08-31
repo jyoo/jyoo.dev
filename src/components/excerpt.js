@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'gatsby';
 
 const Post = ({ post, titleClass, excerptClass }) => {
+    let hrClass = titleClass.indexOf('black') > -1 ? 'jyoo-hr__black' : 'jyoo-hr__white';
 
     return (
       <div className="jyoo-space__record">
@@ -11,11 +12,11 @@ const Post = ({ post, titleClass, excerptClass }) => {
         </p>
         <div className="jyoo-flex__read-more">
           <Link to={post.frontmatter.slug}>
-            <p className={`${titleClass} jyoo-font-size__small`}>
-              Read More
-            </p>
+            <p className={`${titleClass} jyoo-font-size__small`}>Read More</p>
           </Link>
         </div>
+
+        <hr className={hrClass} />
       </div>
     )
 
