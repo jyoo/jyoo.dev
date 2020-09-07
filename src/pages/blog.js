@@ -1,10 +1,13 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Excerpt from "../components/excerpt"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Excerpt from "../components/excerpt";
+import Footer from "../components/footer";
+
 import "../components/layout.css"
+
 
 const Blog = ({ data }) => {
 
@@ -45,6 +48,8 @@ const Blog = ({ data }) => {
             </div>
           </div>
         </div>
+
+        <Footer color={"black"} />
       </Layout>
     )
 }

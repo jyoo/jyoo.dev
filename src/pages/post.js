@@ -24,6 +24,8 @@ export default function Posts({data}) {
             dangerouslySetInnerHTML={{ __html: html }}
           ></div>
         </div>
+
+        <Footer color={"black"} />
       </Layout>
     )
 }

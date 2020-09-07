@@ -134,14 +134,6 @@ const Layout = ({ children, backgroundColor }) => {
           justifyContent: "space-between"
         }}
       >
-        <span className="jyoo-font__white jyoo-font-size__small">
-          © {new Date().getFullYear()}
-          {` `}
-          James Yoo. All Rights Reserved.
-        </span>
-        <span className="jyoo-font__white jyoo-font-size__small">
-          jungsup.yoo@gmail.com
-        </span>
       </div>
     </div>
   )
