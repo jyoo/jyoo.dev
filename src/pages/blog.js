@@ -49,7 +49,7 @@ const Blog = ({ data }) => {
           </div>
         </div>
 
-        <Footer color={"black"} />
+        
       </Layout>
     )
 }

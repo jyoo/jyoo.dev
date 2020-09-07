@@ -1,3 +1,6 @@
+import React from "react"
+import "./layout.css"
+
 const Footer = (color) => {
 
     let fontClass = color === "white" ? "jyoo-font__white" : "jyoo-font__black";
@@ -23,3 +26,5 @@ const Footer = (color) => {
       </div>
     )
 }
+
+export default Footer;
