@@ -2,10 +2,11 @@ import React, { useState, useRef, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import Excerpt from "../components/excerpt"
+import Layout from "../components/layout";
+import Image from "../components/image";
+import SEO from "../components/seo";
+import Excerpt from "../components/excerpt";
+import Footer from "../components/footer";
 
 
 
@@ -160,7 +161,7 @@ const IndexPage = ({data}) => {
           className={"jyoo-space__container"}
         >
           {edges.map(edge => (
-            <FadeIn>
+            <FadeIn key={edge.node.id}>
               <Excerpt
                 key={edge.node.id}
                 post={edge.node}
@@ -171,6 +172,10 @@ const IndexPage = ({data}) => {
           ))}
         </div>
       </div>
+
+      <Footer color={"white"} />
+        
+
     </Layout>
   )
 }

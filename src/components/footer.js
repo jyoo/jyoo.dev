@@ -1,10 +1,8 @@
 import React from "react"
 import "./layout.css"
 
-const Footer = (color) => {
-
+const Footer = ({color}) => {
     let fontClass = color === "white" ? "jyoo-font__white" : "jyoo-font__black";
-    
     return (
       <div
         style={{
