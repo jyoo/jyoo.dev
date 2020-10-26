@@ -1,0 +1,128 @@
+---
+title: "Deploying Static Websites With nuxt.JS on AWS s3 & Github Actions"
+date: "2020-10-27"
+slug: "/posts/deploying-static-websites-with-nuxtjs-on-aws-s3-github-actions"
+author: "James"
+excerpt: "Github Actions, AWS S3 and nuxt.js are powerful tools and framework to deploy a web application fast. In this article, we will see how to create, build and deploy a Vue.js application."
+tags: ["aws", "cloud", "nuxt", "s3", "vue"]
+---
+
+Github Actions, AWS S3 and nuxt.js are powerful tools and framework to deploy a web application fast. In this article, we will see how to create, build and deploy a Vue.js application. By following the below steps, you can update and deploy your app within a few seconds without visiting your AWS console nor pushing your app to Github separately.
+
+## Table of Contents
+- Creating a Vue.js app with Nuxt.js
+- Configuring AWS S3
+- Making / Updating Github repo
+- Deploying your app
+
+----- 
+
+## Creating a Vue.js app with Nuxt.js
+By choosing one of the following and entering the command on the Terminal, you can easily create a Nuxt app.
+
+`yarn create nuxt-app <project-name>`
+
+`npx create-nuxt-app <project-name>`
+
+`npm init nuxt-app <project-name>`
+
+It will ask some questions related to:
+- Programming language (JavaScript vs TypeScript)
+- UI Framework (Bootstrap, Bulma, Tailwind CSS or etc.)
+- Nuxt.js modules (Axios, PWA or Content)
+- Linting tools (ESLint, Prettier or etc.
+- Testing framework (Jest, Ava or etc.)
+- Rendering mode
+- Deployment target
+- Development tools
+- CI
+
+and a full list of questions with frameworks is available [here](https://github.com/nuxt/create-nuxt-app/blob/master/README.md). These days, I try to be more familiar with TypeScript, so I chose TypeScript this time. Once everything is finished, I see the following image. (Note that `yarn` is there because I chose `yarn` as a package manager)
+
+![Terminal Image](../../public/img/2020-10-27-terminal-image.png "Terminal Image")
+
+Looks like everything is ready to proceed!
+
+![Nuxt Image](../../public/img/2020-10-27-nuxt-image.png)
+
+-----
+
+## Configuring AWS S3
+
+### S3
+Here, we assume that we have an AWS account. Move to S3 page, and create a S3 bucket button. Note that:
+- The bucket name must be globally unique (i.e, you may not choose your or other's bucket names)
+- Turning on versioning, server access logging and other logging is optional. You can always turn it on and off later.
+  - Versioning, however, cannot be turned off once it is turned on.
+
+After creating your bucket, you see a page similar to the following screenshot:
+![AWS S3](../../public/img/2020-10-27-aws-s3.png)
+
+### Static Website Hosting
+To host a website on S3, we also need to turn on the "static website hosting" mode. Click the "Properties" and "Static website hosting."
+
+![AWS Static website hosting](../../public/img/2020-10-27-aws-static-website-hosting.png)
+
+Enter index.html for both "Index document" and "Error document", and click the save button.
+
+### Granting Public Access
+NOTE: Granting public access to a S3 bucket is not a recommended approach for a security reason. This tutorial focuses on providing information of hosting an app on S3. Using CloudFront & S3 together and setting up security configuration is desired.
+
+Visit the "Permissions" section, and click the "edit" button. Toggle off the checkbox of "Block all public access" and enter confirm to proceed.
+
+![Public access](../../public/img/2020-10-27-aws-s3-access.png)
+
+
+### yarn generate
+To deploy the app on S3, we need to do `yarn generate` first. Go to the working directory on the Terminal, and enter `yarn generate` to create a `dist` folder. 
+
+![yarn generate](../../public/img/2020-10-27-yarn-generate.png)
+
+### Deploying on AWS Console (Optional)
+This step is not necessary for deploying the app using Github Actions. If you are interested in using AWS console to deploy the app first, please find the below.
+
+To deploy, we use files inside of the `dist` folder. Visit your AWS S3 bucket page, and click the "Upload" button. And, add all files and folder (`_nuxt`) like the below.
+
+![AWS S3 Uploading](../../public/img/2020-10-27-aws-s3-upload.png)
+
+Since this tutorial focuses on deploying the app on S3, we give public read access to the object(s). (Even though public access is given at a bucket level, we still need to give public access to the object(s) so that it can be accessible)
+
+![AWS S3 Public Access at Object Level](../../public/img/2020-10-27-aws-public-access-objects.png)
+
+Now, your website is ready! Go to "Properties" tab and click "Static website hosting". You can visit your website by clicking the endpoint.
+
+-----
+
+## Making / Updating Github repo
+
+
+
+
+
+
+
+
+
+
+
+
+amplify.xml
+```
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install
+    build:
+      commands:
+        - yarn run generate
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+```
