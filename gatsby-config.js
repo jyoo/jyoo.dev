@@ -3,10 +3,20 @@ module.exports = {
     title: `James Yoo`,
     description: `Toronto-based software developer who loves technology, cities and charts`,
     author: `@jyoo`,
-    url: "https://www.jyoo.dev",
+    siteUrl: "https://www.jyoo.dev",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
+        exclude: [`/src/components/*`, `/src/images/*`, `/src/pages/404.js`, `/src/src/*`],
+        },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
