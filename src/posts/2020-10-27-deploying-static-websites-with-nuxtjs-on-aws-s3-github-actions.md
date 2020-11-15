@@ -1,23 +1,22 @@
 ---
-title: "Deploying Static Websites With nuxt.JS on AWS s3 & Github Actions"
+title: "Deploying Static Websites With Nuxt.js on AWS S3 & GitHub Actions"
 date: "2020-10-27"
 slug: "/posts/deploying-static-websites-with-nuxtjs-on-aws-s3-github-actions"
 author: "James"
-excerpt: "Github Actions, AWS S3 and nuxt.js are powerful tools and framework to deploy a web application fast. In this article, we will see how to create, build and deploy a Vue.js application."
+excerpt: "GitHub Actions, AWS S3 and Nuxt.js are powerful tools to deploy a web application fast. In this article, we will see how to create, build and deploy your Nuxt.js application."
 tags: ["aws", "cloud", "nuxt", "s3", "vue"]
 ---
 
-Github Actions, AWS S3 and nuxt.js are powerful tools and frameworks to deploy a web application fast. In this article, we will see how to create, build and deploy a Vue.js application. By following the below steps, you can update and deploy your app within a few seconds without visiting your AWS console nor pushing your app to Github separately.
+GitHub Actions, AWS S3 and Nuxt.js are powerful tools to deploy a web application fast. In this article, we will see how to create, build and deploy your Nuxt.js application. By following the below steps, you can update and deploy your app within a few seconds by pushing the up-to-date version to your GitHub repo. 
 
 ## Table of Contents
-- Creating a Vue.js app with Nuxt.js
-- Configuring AWS S3
-- Making / Updating Github repo
-- Deploying your app
+- Creating a Nuxt.js app
+- Configuration
+- Making / Updating GitHub repo
 
 ----- 
 
-## Creating a Vue.js app with Nuxt.js
+## Creating a Nuxt.js app
 By choosing one of the following and entering the command on the Terminal, you can easily create a Nuxt app.
 
 `yarn create nuxt-app <project-name>`
@@ -47,11 +46,11 @@ Looks like everything is ready to proceed!
 
 -----
 
-## Configuring AWS S3
+## Configuration
 
 ### S3
-Here, we assume that we have an AWS account. Move to the S3 page, and create a S3 bucket button. Note that:
-- The bucket name must be globally unique (i.e. you may not choose your or other's bucket names)
+Here, we assume that we already have an AWS account. Move to the S3 page, and create a S3 bucket. Note that:
+- The bucket name must be globally unique (i.e. you may not choose your or other's existing bucket names)
 - Turning on versioning, server access logging and other logging is optional. You can always turn it on and off later.
   - Versioning, however, cannot be turned off once it is turned on.
 
@@ -66,12 +65,11 @@ To host a website on S3, we also need to turn on the "static website hosting" mo
 Enter index.html for both "Index document" and "Error document," and click the save button.
 
 ### Granting Public Access
-NOTE: Granting public access to a S3 bucket is not a recommended approach for security reasons. This tutorial focuses on providing information of hosting an app on S3. Using CloudFront & S3 together and setting up security configuration is desired.
+NOTE: Granting public access to a S3 bucket is not a recommended approach for security reasons. This tutorial focuses on providing information of hosting an app on S3. Using CloudFront & S3 together and setting up security configuration are desired.
 
 Visit the "Permissions" section, and click the "edit" button. Toggle off the checkbox of "Block all public access" and enter confirm to proceed.
 
 ![Public access](../images/2020-10-27-aws-s3-access.png)
-
 
 ### yarn generate
 To deploy the app on S3, we need to do `yarn generate` first. Go to the working directory on the Terminal, and enter `yarn generate` to create a `dist` folder. 
@@ -79,14 +77,14 @@ To deploy the app on S3, we need to do `yarn generate` first. Go to the working 
 ![yarn generate](../images/2020-10-27-yarn-generate.png)
 
 ### Deploying on AWS Console
-This step is not necessary for deploying the app using Github Actions. If you are interested in using the AWS console to deploy the app first, please find the below.
+This step is not necessary for deploying the app using GitHub Actions. If you are interested in using the AWS console to deploy the app first, please find the below.
 
 To deploy, we use files inside of the `dist` folder. Visit your AWS S3 bucket page, and click the "Upload" button. And, add all files and folder (`_nuxt`) like the below.
 
 ![AWS S3 Uploading](../images/2020-10-27-aws-s3-upload.png)
 
 For fast deployment using S3, we give public read access to the object(s). 
-Note that public access at a bucket level and at an object level are two different concepts. Allowing public access at a bucket level, but not at an object level or the other way around results in the access denied error.
+Note that public access at a bucket level and at an object level are two different concepts. Allowing public access at a bucket level, but not at an object level or the other way around may result in the access denied error.
 
 ![AWS S3 Public Access at Object Level](../images/2020-10-27-aws-public-access-objects.png)
 
@@ -94,9 +92,9 @@ Now, your website is ready! Go to the "Properties" tab and click "Static website
 
 -----
 
-## Making / Updating Github repo
+## Making / Updating GitHub repo
 
-Using Github actions, you can commit and push your version to your Github repo and deploy that version to your S3 bucket at the same time. Create `push.yml` that contains the following:
+Using GitHub actions, you can commit and push the new version of your website to your GitHub repo and deploy that version to your S3 bucket at the same time. Create `push.yml` that contains the following:
 ```
 name: CI/CD
 on:
@@ -122,11 +120,6 @@ jobs:
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./dist/ s3://s3-bucket-arn --delete
 ```
-- NOTE 1: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY must be defined in the [`credentials` file in a folder named `.aws` in your home directory.](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+- NOTE 1: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` must be defined in the [`credentials` file in a folder named `.aws` in your home directory.](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
 The `push.yml` file must be saved in the `.github` folder that is inside of your working directory.
-
-
-
-
-
