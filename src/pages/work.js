@@ -130,11 +130,20 @@ const Work = () => (
         >
           <div className="jyoo-space__record">
             <h2 className="jyoo-font__black">
+              <a href="https://www.chysquare.com">Jasan</a>
+            </h2>
+            <p className="jyoo-font-size__small jyoo-font__gray">
+              Jasan is a platform that you use to get investment ideas,
+              regardless of your level of experience.
+            </p>
+          </div>
+          <div className="jyoo-space__record">
+            <h2 className="jyoo-font__black">
               <a href="https://www.chysquare.com">Chy Square</a>
             </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
-              Collaborated in the designing and creation of websites, iOS and
-              Android apps using React for Chy Square and clients.
+              Chy Square is a digital agency that integrates strategy,
+              creativity & experience to help you build your brands.
             </p>
           </div>
           <div className="jyoo-space__record">
@@ -142,14 +151,13 @@ const Work = () => (
               <a href="https://www.unlyst.com">Unlyst</a>
             </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
-              Wrote Python scripts to track the status of real estate projects
-              in Toronto and save them on AWS RDS. Designed and deployed a
-              website together with Brandon Graham Donnelly.
+              Unlyst provides subscribers with an email, including 
+              the latest status of active development projects in Toronto every morning.
             </p>
           </div>
           <div className="jyoo-space__record">
             <h2 className="jyoo-font__black">
-              <a href="https://www.averagenie.com">Averagenie</a>
+              <span>Averagenie</span>
             </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
               Designed and developed a website that shows the average of things
