@@ -13,7 +13,7 @@ export default function Posts({data}) {
     const {frontmatter, html} = markdownRemark
 
     return (
-      <Layout backgroundColor="#FFFAFA">
+      <Layout backgroundColor="#FFFFFF">
         <SEO title={frontmatter.title} description={frontmatter.excerpt} />
         <div className="jyoo-body__container">
           <div className={"jyoo-body__title-wrapper"}>

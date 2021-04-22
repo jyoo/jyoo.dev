@@ -1,17 +1,13 @@
 import React, { useState, useRef, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
-
 import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
 import Excerpt from "../components/excerpt";
 import Footer from "../components/footer";
 
-
-
 import "../components/layout.css"
-
 
 const FadeIn = (props) => {
   const [isVisible, setVisible] = useState(false);

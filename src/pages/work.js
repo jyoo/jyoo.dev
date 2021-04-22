@@ -9,7 +9,7 @@ import "../components/layout.css"
 
 
 const Work = () => (
-  <Layout backgroundColor={"#FFFAFA"}>
+  <Layout backgroundColor={"#FFFFFF"}>
     <SEO title="Work" />
     <div className="jyoo-body__container">
       <div
@@ -130,7 +130,7 @@ const Work = () => (
         >
           <div className="jyoo-space__record">
             <h2 className="jyoo-font__black">
-              <a href="https://www.chysquare.com">Jasan</a>
+              <a href="https://jasan.io">Jasan</a>
             </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
               Jasan is a platform that you use to get investment ideas,
@@ -151,8 +151,8 @@ const Work = () => (
               <a href="https://www.unlyst.com">Unlyst</a>
             </h2>
             <p className="jyoo-font-size__small jyoo-font__gray">
-              Unlyst provides subscribers with an email, including 
-              the latest status of active development projects in Toronto every morning.
+              Unlyst provides subscribers with an email, including the latest
+              status of active development projects in Toronto every morning.
             </p>
           </div>
           <div className="jyoo-space__record">

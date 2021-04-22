@@ -1,21 +1,17 @@
 import React from "react";
 import { Link } from "gatsby";
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Excerpt from "../components/excerpt";
 import Footer from "../components/footer";
-
 import "../components/layout.css"
-
 
 const Blog = ({ data }) => {
 
     const { allMarkdownRemark } = data
     const { edges } = allMarkdownRemark
-  
     return (
-      <Layout backgroundColor={"#FFFAFA"}>
+      <Layout backgroundColor={"#FFFFFF"}>
         <SEO title="Blog" />
         <div className="jyoo-body__container">
           <div
