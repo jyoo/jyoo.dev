@@ -95,7 +95,7 @@ const IndexPage = ({data}) => {
               <h2 className="jyoo-font__white">Chy Square</h2>
               <p className="jyoo-font__white jyoo-font-size__default ">
                 Full-stack developer{" "}
-                <span className="jyoo-font__gray">• 2018 - Present</span>
+                <span className="jyoo-font__gray">• 2019 - Present</span>
               </p>
             </div>
           </FadeIn>

@@ -19,7 +19,7 @@ const Footer = ({color}) => {
           James Yoo. All Rights Reserved.
         </span>
         <span className={`${fontClass} jyoo-font-size__small`}>
-          jungsup.yoo@gmail.com
+          <a href="mailto:jungsup.yoo@gmail.com">jungsup.yoo@gmail.com</a>
         </span>
       </div>
     )

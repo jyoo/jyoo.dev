@@ -42,7 +42,7 @@ template {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: inherit;
+  color: #1a0dab;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
