@@ -1,5 +1,5 @@
 ---
-title: "Deploying Code on GitHub and EC2 Using AWS CodeDeploy"
+title: "Deploying Code on GitHub and EC2 Using AWS CodeDeploy (1)"
 date: "2021-04-22"
 slug: "/posts/deploying-code-on-github-and-ec2-using-aws-codedeploy"
 author: "James"
@@ -11,6 +11,7 @@ Easy deployment using CI / CD tools helps developers and engineers focus on deve
 
 Using AWS CodeDeploy and CodePipeline, and GitHub, you can push your code to your GitHub repo and automatically deploy that to EC2 instances. This article includes a few references that I have used and some notes.
 
+-----
 ## Table of Contents
 - Deploying Node.js app on EC2
 - Configuring CodeDeploy agent on an EC2 instance
@@ -50,6 +51,7 @@ permissions:
       - directory
       - file
 ```
+
 -----
 ## Setting up CodeDeploy and CodePipeline (with S3)
 * To avoid permission errors, you need TWO different IAM roles. One is for CodeDeploy, and the other is for an EC2 instance.
