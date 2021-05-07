@@ -8,21 +8,23 @@ const Footer = ({color}) => {
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          padding: `1.45rem 0`,
           display: "flex",
           justifyContent: "space-between",
         }}
       >
-        <span className={`${fontClass} jyoo-font-size__small`}>
-          © {new Date().getFullYear()}
-          {` `}
-          James Yoo. All Rights Reserved.
-        </span>
-        <span className={`${fontClass} jyoo-font-size__small`}>
-          <a className="jyoo-font__black" href="mailto:jungsup.yoo@gmail.com">
-            jungsup.yoo@gmail.com
-          </a>
-        </span>
+        <div>
+          <span className={`${fontClass} jyoo-font-size__small`}>
+            James Yoo
+          </span>
+        </div>
+        <div>
+          <span className={`${fontClass} jyoo-font-size__small`}>
+            <a className="jyoo-font__white" href="mailto:jungsup.yoo@gmail.com">
+              jungsup.yoo@gmail.com
+            </a>
+          </span>
+        </div>
       </div>
     )
 }
