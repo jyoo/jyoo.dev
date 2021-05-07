@@ -20,7 +20,7 @@ const Footer = ({color}) => {
         </div>
         <div>
           <span className={`${fontClass} jyoo-font-size__small`}>
-            <a className="jyoo-font__white" href="mailto:jungsup.yoo@gmail.com">
+            <a className={`${fontClass}`} href="mailto:jungsup.yoo@gmail.com">
               jungsup.yoo@gmail.com
             </a>
           </span>
