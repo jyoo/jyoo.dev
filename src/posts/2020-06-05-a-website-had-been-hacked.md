@@ -3,7 +3,7 @@ title: "Restoring A Hacked Website"
 date: "2020-06-05"
 slug: "/posts/restoring-a-hacked-website"
 author: "James"
-excerpt: ""
+excerpt: "A couple of weeks ago, I had a chance to restore one website that had been hacked by a hacker. Since I think it was a valuable experience experience to me, I wrote the below record in case."
 tags: ["wordpress", "programming"]
 ---
 

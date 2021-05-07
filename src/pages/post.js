@@ -10,8 +10,7 @@ import "../components/layout.css";
 export default function Posts({data}) {
 
     const {markdownRemark} = data;
-    const {frontmatter, html} = markdownRemark
-
+    const {frontmatter, html} = markdownRemark;
     return (
       <Layout backgroundColor="#FFFFFF">
         <SEO title={frontmatter.title} description={frontmatter.excerpt} />
@@ -39,6 +38,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        excerpt
       }
     }
   }

@@ -3,7 +3,7 @@ title: "Android App Crashed by React Native Maps and Firebase"
 date: "2020-08-01"
 slug: "/posts/android-app-crashed-by-react-native-maps-and-firebase"
 author: "James"
-excerpt: "Using React Native which includes a JavaScript library, I can make an iOS and Android app at the same time, and it is quite useful. To develop my app, I installed the well-known packages, react-native-maps and react-native-firebase. My iOS app was working very well when I used both packages at the same time, but Android app kept crashing whenever the screen was mounted. By using lite-mode of Google Map, the app became working well."
+excerpt: "Android app kept crashing whenever the screen was mounted. By using lite-mode of Google Map, the app became working well."
 tags: ["android", "react", "firebase", "programming"]
 ---
 

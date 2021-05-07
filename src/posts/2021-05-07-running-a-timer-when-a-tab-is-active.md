@@ -3,13 +3,13 @@ title: "Running a Timer When a Tab Is Active"
 date: "2021-05-07"
 slug: "/posts/running-a-timer-when-a-tab-is-active"
 author: "James"
-excerpt: ""
+excerpt: "Using the `setInterval()` or `setTimeout()`, you can also send request(s) multiple times or after waiting for some time."
 tags: ["react"]
 ---
 
 It should not be hard to send a request to an endpoint. From `fetch` to `axios`, there are many ways to achieve it. Using the `setInterval()` or `setTimeout()`, you can also send request(s) multiple times or after waiting for some time.
 
-However, you might want to limit sending requests, if you are charged whenever you send a request. To get a response and update UI when a user actually sees your pages, the following a custom hook with the setInterval inside of `useEffect` might be helpful.
+However, you might want to limit sending requests, if you are charged whenever you send a request. To get a response and update UI when a user actually sees your pages, the following a custom hook with the `setInterval` inside of `useEffect` might be helpful.
 
 ```
 import React, { useState, useEffect } from "react";

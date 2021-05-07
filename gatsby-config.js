@@ -8,16 +8,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
-        // Exclude specific pages or groups of pages using glob parameters
-        // See: https://github.com/isaacs/minimatch
-        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
-        exclude: [`/src/components/*`, `/src/images/*`, `/src/pages/404.js`, `/src/src/*`],
-        },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -31,6 +21,67 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: "/sitemap.xml",
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        // exclude: [
+        //   `/src/components/*`,
+        //   `/src/images/*`,
+        //   `/src/pages/404.js`,
+        //   `/src/src/*`,
+        // ],
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+          allMarkdownRemark {
+            edges {
+              node {
+                frontmatter {
+                  slug
+                }
+              }
+            }
+          }
+        }`,
+        serialize: ({ site, allSitePage, allMarkdownRemark }) => {
+          let pages = []
+          allSitePage.edges.map(edge => {
+            console.log(edge.node.path)
+            pages.push({
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              priority: 0.7,
+            })
+          })
+          console.log("========")
+          // allMarkdownRemark.edges.map(edge => {
+
+          //   console.log(edge.node.frontmatter.slug)
+          //   pages.push({
+          //     url: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
+          //     changefreq: `daily`,
+          //     priority: 0.7,
+          //   })
+          // })
+
+          return pages
+        },
+      },
+    },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

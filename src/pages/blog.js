@@ -54,7 +54,7 @@ export default Blog;
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      limit: 5
+      limit: 10
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

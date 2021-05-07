@@ -3,7 +3,7 @@ title: "Deploying Code on GitHub and EC2 Using AWS CodeDeploy (2)"
 date: "2021-05-01"
 slug: "/posts/deploying-code-on-github-and-ec2-using-aws-codedeploy-2"
 author: "James"
-excerpt: ""
+excerpt: "This is the second writing about deploying a Node.js app using CI/CD tools, AWS CodeDeploy and AWS CodePipeline."
 tags: ["aws", "ec2", "github", "node"]
 ---
 
