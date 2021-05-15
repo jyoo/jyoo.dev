@@ -81,18 +81,6 @@ const CoreHeader = ({ toggleMobileMenu }) => (
     <span className={"jyoo-header__button-container"}>
       <span className="jyoo-header__button-wrapper">
         <Link
-          to="/work"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          <h4 className="jyoo-header__button">Work</h4>
-        </Link>
-      </span>
-
-      <span className="jyoo-header__button-wrapper">
-        <Link
           to="/blog"
           style={{
             color: `white`,
@@ -102,7 +90,18 @@ const CoreHeader = ({ toggleMobileMenu }) => (
           <h4 className="jyoo-header__button">Blog</h4>
         </Link>
       </span>
-      
+
+      <span className="jyoo-header__button-wrapper">
+        <Link
+          to="/work"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          <h4 className="jyoo-header__button">Work</h4>
+        </Link>
+      </span>
 
       {/* <span>
         <Link

@@ -53,10 +53,10 @@ const IndexPage = ({data}) => {
             Hello. I'm <span className={"jyoo-font__white"}>James</span>,
           </h1>
           <h1 className={"jyoo-font__gray" + " " + "jyoo-font-size__extra_big"}>
-            Toronto-based{" "}
-            <span className={"jyoo-font__white"}>software developer</span> who
-            loves web, technology and investment.
-          </h1>
+            Canada-based software engineer who loves{" "}
+            <span className={"jyoo-font__white"}>web</span>,{" "}
+            <span className={"jyoo-font__white"}>technology</span>{" "}
+            and <span className={"jyoo-font__white"}>investment</span>.</h1>
         </FadeIn>
       </div>
 
@@ -65,6 +65,44 @@ const IndexPage = ({data}) => {
           minHeight: "100vh",
         }}
       >
+        <FadeIn>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className={"jyoo-body__title-wrapper"}>
+              <h1 className={"jyoo-font__white jyoo-font-size__extra_big"}>
+                Blog
+              </h1>
+            </div>
+          </div>
+        </FadeIn>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+          className={"jyoo-space__container"}
+        >
+          {edges.map(edge => (
+            <FadeIn key={edge.node.id}>
+              <Excerpt
+                key={edge.node.id}
+                post={edge.node}
+                titleClass={"jyoo-font__white"}
+                excerptClass={"jyoo-font__light-gray"}
+              />
+            </FadeIn>
+          ))}
+        </div>
+
+        {/* 
         <FadeIn>
           <div
             style={{
@@ -130,48 +168,11 @@ const IndexPage = ({data}) => {
             </div>
           </FadeIn>
         </div>
-
-        <FadeIn>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div className={"jyoo-body__title-wrapper"}>
-              <h1 className={"jyoo-font__white jyoo-font-size__extra_big"}>
-                Blog
-              </h1>
-            </div>
-          </div>
-        </FadeIn>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-          className={"jyoo-space__container"}
-        >
-          {edges.map(edge => (
-            <FadeIn key={edge.node.id}>
-              <Excerpt
-                key={edge.node.id}
-                post={edge.node}
-                titleClass={"jyoo-font__white"}
-                excerptClass={"jyoo-font__light-gray"}
-              />
-            </FadeIn>
-          ))}
-        </div>
+      
+       */}
       </div>
 
       <Footer color={"white"} />
-        
-
     </Layout>
   )
 }
