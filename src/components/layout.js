@@ -71,7 +71,7 @@ const Layout = ({ children, backgroundColor }) => {
         >
           <div style={{ margin: "2rem", padding: "1rem 1rem" }}>
             <Link
-              to="/work"
+              to="/about"
               style={{
                 color: `white`,
                 textDecoration: `none`,
@@ -81,7 +81,7 @@ const Layout = ({ children, backgroundColor }) => {
                 className="jyoo-header__button"
                 onClick={() => setMobileMenuVisible(false)}
               >
-                Work
+                About
               </h2>
             </Link>
           </div>

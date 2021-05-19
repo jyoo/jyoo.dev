@@ -53,10 +53,10 @@ const IndexPage = ({data}) => {
             Hello. I'm <span className={"jyoo-font__white"}>James</span>,
           </h1>
           <h1 className={"jyoo-font__gray" + " " + "jyoo-font-size__extra_big"}>
-            Canada-based software engineer who loves{" "}
-            <span className={"jyoo-font__white"}>web</span>,{" "}
-            <span className={"jyoo-font__white"}>technology</span>{" "}
-            and <span className={"jyoo-font__white"}>investment</span>.</h1>
+            Canada-based{" "}
+            <span className={"jyoo-font__white"}>software engineer</span> who
+            loves web, technology and investment.
+          </h1>
         </FadeIn>
       </div>
 

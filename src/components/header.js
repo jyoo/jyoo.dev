@@ -93,13 +93,13 @@ const CoreHeader = ({ toggleMobileMenu }) => (
 
       <span className="jyoo-header__button-wrapper">
         <Link
-          to="/work"
+          to="/about"
           style={{
             color: `white`,
             textDecoration: `none`,
           }}
         >
-          <h4 className="jyoo-header__button">Work</h4>
+          <h4 className="jyoo-header__button">About</h4>
         </Link>
       </span>
 
