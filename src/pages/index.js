@@ -7,6 +7,7 @@ import SEO from "../components/seo";
 import Excerpt from "../components/excerpt";
 import Footer from "../components/footer";
 
+import Face from "../images/face.jpg"
 import "../components/layout.css"
 
 const FadeIn = (props) => {
@@ -33,15 +34,16 @@ const FadeIn = (props) => {
 
 
 const IndexPage = ({data}) => {
+  // console.log
+  // const {allMarkdownRemark} = data.latestPost;
 
-  const {allMarkdownRemark} = data;
-  const {edges} = allMarkdownRemark;
+  const { edges } = data.latestPost;
 
   return (
     <Layout backgroundColor="black">
       <div
         style={{
-          minHeight: "100vh",
+          // minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -49,14 +51,30 @@ const IndexPage = ({data}) => {
       >
         <SEO title="Hello" />
         <FadeIn>
-          <h1 className={"jyoo-font__gray" + " " + "jyoo-font-size__extra_big"}>
+          <div style={{
+            display: "flex",
+            // flexDirection: "column",
+            paddingTop: 100,
+            paddingBottom: 100
+            
+          }}>
+            <div style={{marginRight: 10}}>
+              <img style={{borderRadius: "50%", maxWidth: 60, maxHeight: 60, width: 60, height: 60, margin: 0}} src={Face} />
+            </div>
+            <div>
+              <p className="jyoo-font__white" style={{marginBottom: 0}}>James Yoo</p>
+              <p className="jyoo-font__gray" style={{marginBottom: 0}}>Canada-based software engineer who loves web, technology and investment</p>
+            </div>
+          </div>
+
+          {/* <h1 className={"jyoo-font__gray" + " " + "jyoo-font-size__extra_big"}>
             Hello. I'm <span className={"jyoo-font__white"}>James</span>,
-          </h1>
-          <h1 className={"jyoo-font__gray" + " " + "jyoo-font-size__extra_big"}>
+          </h1> */}
+          {/* <h1 className={"jyoo-font__gray" + " " + "jyoo-font-size__extra_big"}>
             Canada-based{" "}
             <span className={"jyoo-font__white"}>software engineer</span> who
             loves web, technology and investment.
-          </h1>
+          </h1> */}
         </FadeIn>
       </div>
 
@@ -100,7 +118,12 @@ const IndexPage = ({data}) => {
               />
             </FadeIn>
           ))}
+
+          <div>
+
+          </div>
         </div>
+        
 
         {/* 
         <FadeIn>
@@ -181,20 +204,24 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    latestPost: allMarkdownRemark(
       limit: 5 
-      sort: { order: DESC, fields: [frontmatter___date] }) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 250)
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              slug
-              title
-            }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
           }
         }
+      }
     }
   }
+
 `
+
+
