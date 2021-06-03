@@ -1,5 +1,5 @@
 ---
-title: "Sort function in JavaScript and Python"
+title: "Sort Function in JavaScript and Python"
 date: "2021-06-01"
 slug: "/posts/sort-function-in-javascript-and-python"
 author: "James"
