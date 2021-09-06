@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import React, { useEffect, useState, useRef, useCallback } from "react"
 
 import { motion } from "framer-motion"
+import GitHub from "../images/github.png"
 
 
 import "./layout.css"
@@ -103,6 +104,17 @@ const CoreHeader = ({ toggleMobileMenu }) => (
         </Link>
       </span>
 
+      <span className="jyoo-header__button-wrapper">
+        <a
+          href="https://github.com/jyoo"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          <h4 className="jyoo-header__button">GitHub</h4>
+        </a>
+      </span>
       {/* <span>
         <Link
           to="/charts"

@@ -43,38 +43,25 @@ const Work = () => (
               </span>
               .
             </p>
+
             <p className="jyoo-font-size__default jyoo-font__gray">
-              These days, I work at{" "}
-              <span className="jyoo-font__black">Chy Square</span> as a
-              full-stack developer and write codes for the company's clients in
-              North America, Korea and Southern Asia. In 2019, I also decided to
-              continue studying after my daily work. I attend courses for my
-              second bachelor's degree with computer science and geography.
+              I work at <span className="jyoo-font__black">Replicon</span> as a
+              software engineer. My{" "}
+              <span className="jyoo-font__black">
+                Site Reliability Engineering (SRE)
+              </span>{" "}
+              team ensures highly available and scalable services for our 
+              clients, and my primary job is to work with teammates to achieve 
+              that goal.
             </p>
+
             <p className="jyoo-font-size__default jyoo-font__gray">
-              I like to write codes in{" "}
-              <span className="jyoo-font__black">JavaScript / Node.js</span>,{" "}
-              <span className="jyoo-font__black">TypeScript</span>,{" "}
-              <span className="jyoo-font__black">Python</span> and Java and
-              always enjoy learning new technologies!
+              Before joining Replicon, I had been running my company,{" "}
+              <span className="jyoo-font__black">Chy Square</span>. Chy Square is a digital agency 
+              that provides web and software development services for clients in the world. 
+              As a co-founder, I had great opportunities to work with professional and brilliant teammates.
             </p>
           </div>
-
-          {/* <div className="home-work__record">
-            <p className="jyoo-font-size__default jyoo-font__gray">
-              I work at <span className="jyoo-font__black">Chy Square</span> as
-              a <span className="jyoo-font__black">full-stack developer</span>{" "}
-              specialized in building and managing services and software.
-            </p>
-            <p className="jyoo-font-size__default jyoo-font__gray">
-              With experience in languages such as{" "}
-              <span className="jyoo-font__black">
-                JavaScript / Node.js, TypeScript, Python and Java
-              </span>
-              , I have developed and deployed web-based apps and softwares on
-              the <span className="jyoo-font__black">AWS</span>.
-            </p>
-          </div> */}
         </div>
       </div>
     </div>
@@ -102,10 +89,17 @@ const Work = () => (
           </h1>
         </div>
         <div className="jyoo-space__record">
-          <h2 className="jyoo-font__black">Chy Square</h2>
+          <h2 className="jyoo-font__black">Replicon</h2>
           <p className="jyoo-font-size__default jyoo-font__black">
             Full-stack developer{" "}
-            <span className="jyoo-font__gray">• 2018 - Present</span>
+            <span className="jyoo-font__gray">• 2021 - Present</span>
+          </p>
+        </div>
+        <div className="jyoo-space__record">
+          <h2 className="jyoo-font__black">Chy Square</h2>
+          <p className="jyoo-font-size__default jyoo-font__black">
+            Co-founder / Full-stack developer{" "}
+            <span className="jyoo-font__gray">• 2018 - 2021</span>
           </p>
         </div>
         <div className="jyoo-space__record">
